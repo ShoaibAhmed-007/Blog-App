@@ -12,9 +12,9 @@ const AboutPage = () => {
           <h1 className="text-4xl font-bold mb-4">About This Blog</h1>
           <p className="text-lg text-gray-700 mb-6">
             Welcome to our blog! This space is dedicated to sharing insights,
-            tips, and stories on a variety of topics. Whether you’re looking for
-            the latest trends in technology, tutorials on web development, or
-            personal anecdotes from our author, you’ll find it here.
+            tips, and stories on a variety of topics. Whether you are looking
+            for the latest trends in technology, tutorials on web development,
+            or personal anecdotes from our author, you will find it here.
           </p>
           <p className="text-lg text-gray-700 mb-6">
             Our goal is to provide valuable information that inspires and

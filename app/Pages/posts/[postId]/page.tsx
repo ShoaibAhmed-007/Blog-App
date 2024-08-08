@@ -4,10 +4,9 @@ import { useParams } from "next/navigation";
 import { posts } from "@/app/data/post";
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
+const { postId } = useParams();
 
 export default function page() {
-  const { postId } = useParams();
-
   const post = posts.find((post) => post.id === postId);
 
   if (!post) {
