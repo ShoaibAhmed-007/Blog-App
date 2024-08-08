@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import PostList from "./Components/PostList";
 import React, { useState } from "react";
 import { posts } from "./data/post";
+import Post from "./Components/Post";
 
 let featuredPost = posts[0];
 
@@ -17,27 +18,18 @@ const Page = () => {
         <p className="text-lg mt-2">
           Your source for the latest updates and articles.
         </p>
-
-        <input
-          type="text"
-          placeholder="Search..."
-          className="mt-4 p-2 rounded-md border border-gray-300 text-black"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
       </header>
 
       {featuredPost && (
         <div className="text-center py-6">
           <h2 className="text-2xl font-semibold">Featured Post</h2>
-          <div className="flex flex-col items-center gap-2 border border-gray-200 rounded-lg shadow-lg mt-4 w-72 mx-auto bg-white p-4">
-            <img
-              src={featuredPost.img}
-              alt={featuredPost.title}
-              className="h-40 w-full object-cover rounded-md"
+          <div className="flex flex-col items-center gap-2 border border-gray-200 rounded-lg shadow-lg mt-4 w-72 mx-auto bg-white p-4 cursor-pointer">
+            <Post
+              key={featuredPost.id}
+              id={featuredPost.id}
+              post={featuredPost}
+              isHomePage={true}
             />
-            <h3 className="text-xl font-semibold">{featuredPost.title}</h3>
-            <p className="text-gray-600">{featuredPost.smallDesc}</p>
           </div>
         </div>
       )}
@@ -45,6 +37,13 @@ const Page = () => {
       <main className="bg-gray-100 flex flex-col items-center py-8">
         <section className="container mx-auto flex flex-col items-center">
           <h2 className="text-2xl font-semibold mb-4">Recent Posts</h2>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="mt-4 p-2 rounded-md border border-gray-300 text-black"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 cursor-pointer">
             <PostList posts={posts} isHomePage={true} search={search} />
           </div>
