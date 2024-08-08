@@ -5,7 +5,7 @@ import { posts } from "@/app/data/post";
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
 
-export default function page() {
+export default function Page() {
   const { postId } = useParams();
   const post = posts.find((post) => post.id === postId);
 
