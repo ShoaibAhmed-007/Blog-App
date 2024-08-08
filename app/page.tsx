@@ -7,7 +7,7 @@ import { posts } from "./data/post";
 
 let featuredPost = posts[0];
 
-const page = () => {
+const Page = () => {
   const [search, setSearch] = useState<string>("");
   return (
     <>
@@ -63,4 +63,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
